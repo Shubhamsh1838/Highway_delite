@@ -210,7 +210,7 @@ body {
   .auth-form {
     width: 100%;
     height: auto;
-    padding: 2rem;
+    padding: 1rem;
     box-shadow: none;
   }
   
@@ -223,6 +223,8 @@ body {
     height: auto;
     justify-content: center;
     margin-left: 40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   
   .btn {
