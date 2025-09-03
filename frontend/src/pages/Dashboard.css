@@ -384,7 +384,7 @@
     text-align: center;
   }
   .dashboard-header h2 {
-  margin-left: 190px;
+  margin-left: 60%;
   display: flex;
   font-size: 1.3rem;
   font-weight: 500;
@@ -400,14 +400,18 @@
     flex-direction: row;
     text-align: center;
     align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
   }
   
   .header-right {
     flex-direction: row;
+    justify-content: space-between;
     text-align: center;
     align-items: center;
     width: 100%;
-    margin-right: 100px;
+    margin-right: 20%;
+    padding: 1rem;
   }
   
   .welcome-text {
@@ -416,8 +420,8 @@
   }
   
   .logout-btn {
-    width: 120px;
-    margin-left: 75px;
+    width: 90px;
+    margin-left: 11.5rem;
   }
   .image {
     width: 380px;
