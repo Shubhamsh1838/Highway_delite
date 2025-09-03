@@ -99,19 +99,26 @@ export const AuthProvider = ({ children }) => {
   };
 
   const googleLogin = async (accessToken) => {
-    try {
-      const response = await axios.post('/api/auth/google', { accessToken });
-      const { token: newToken, data } = response.data;
-      setToken(newToken);
-      setUser(data);
-      return { success: true };
-    } catch (error) {
-      return { 
-        success: false, 
-        message: error.response?.data?.message || 'Google login failed' 
-      };
+  try {
+    console.log('Sending Google login request with token:', accessToken);
+    const response = await axios.post('/api/auth/google', { accessToken });
+    if (!response.data) {
+      throw new Error('Empty response from server');
     }
-  };
+    
+    console.log('Google login response:', response.data);
+    const { token: newToken, data } = response.data;
+    setToken(newToken);
+    setUser(data);
+    return { success: true };
+  } catch (error) {
+    console.error('Google login error:', error.response?.data || error.message);
+    return { 
+      success: false, 
+      message: error.response?.data?.message || 'Google login failed' 
+    };
+  }
+};
 
   const logout = () => {
     setToken(null);
@@ -135,4 +142,5 @@ export const AuthProvider = ({ children }) => {
       {!loading && children}
     </AuthContext.Provider>
   );
+
 };
