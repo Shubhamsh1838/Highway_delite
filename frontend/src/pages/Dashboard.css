@@ -490,4 +490,19 @@
     padding: 0.9rem 1.2rem;
     font-size: 0.95rem;
   }
+ .dashboard-header h2 {
+  margin-left: 80px;
+  display: flex;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.logout-btn {
+    width: 90px;
+    font-size: 0.7rem;
+    margin-left: 0.1rem;
+  }
+  .header-logo{
+    margin: 0;
+   height: 25px;
+  }
 }
