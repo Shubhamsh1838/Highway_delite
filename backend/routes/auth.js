@@ -269,23 +269,29 @@ router.post('/login', async (req, res) => {
 // @route   POST /api/auth/google
 router.post('/google', async (req, res) => {
   try {
-    const { accessToken } = req.body; // Changed from tokenId to accessToken
+    console.log('Google auth request received:', req.body);
+    const { accessToken } = req.body;
 
     if (!accessToken) {
+      console.log('No access token provided');
       return res.status(400).json({
         success: false,
         message: 'Google access token is required'
       });
     }
 
-    // Fetch user info from Google using access token
+    console.log('Fetching user info from Google with token');
     const response = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
       headers: {
         Authorization: `Bearer ${accessToken}`
       }
     });
 
+    console.log('Google API response status:', response.status);
+    
     if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Google API error:', errorText);
       return res.status(401).json({
         success: false,
         message: 'Invalid Google access token'
@@ -293,30 +299,44 @@ router.post('/google', async (req, res) => {
     }
 
     const payload = await response.json();
+    console.log('Google user info:', payload);
+    
     const { email, name, sub: googleId } = payload;
+
+    if (!email) {
+      console.log('No email in Google response');
+      return res.status(400).json({
+        success: false,
+        message: 'Could not get email from Google'
+      });
+    }
 
     // Check if user exists
     let user = await User.findOne({ email });
+    console.log('Found user in DB:', user);
 
     if (user) {
-      // If user exists but registered with email, update with Google ID
       if (!user.googleId) {
         user.googleId = googleId;
         await user.save();
+        console.log('Updated user with Google ID');
       }
     } else {
       // Create new user
       user = await User.create({
-        name,
+        name: name || email.split('@')[0],
         email,
         googleId,
         isVerified: true
       });
+      console.log('Created new user:', user);
     }
 
     // Generate token
     const token = generateToken(user._id);
+    console.log('Generated token for user:', user.email);
 
+    // ✅ Send proper JSON response
     res.status(200).json({
       success: true,
       message: 'Google authentication successful',
@@ -327,6 +347,7 @@ router.post('/google', async (req, res) => {
         email: user.email
       }
     });
+
   } catch (error) {
     console.error('Google auth error:', error);
     res.status(500).json({
@@ -362,3 +383,4 @@ router.get('/me', protect, async (req, res) => {
 
 
 module.exports = router;
+
