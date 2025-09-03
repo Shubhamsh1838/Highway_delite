@@ -17,52 +17,6 @@ const generateToken = (id) => {
   });
 };
 
-// const sendOTPEmail = async (email, otp) => {
-//   try {
-//     // ALWAYS log OTP to console for development
-//     console.log('📧 OTP for', email, ':', otp);
-//     console.log('⏰ OTP valid for 10 minutes');
-    
-//     // Try to send email but don't fail if it doesn't work
-//     if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
-//       const transporter = nodemailer.createTransport({
-//         host: process.env.EMAIL_HOST,
-//         port: process.env.EMAIL_PORT,
-//         secure: false,
-//         auth: {
-//           user: process.env.EMAIL_USER,
-//           pass: process.env.EMAIL_PASS
-//         }
-//       });
-
-//       const mailOptions = {
-//         from: process.env.EMAIL_USER,
-//         to: email,
-//         subject: 'Your OTP for Notes App',
-//         html: `
-//           <div style="font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto;">
-//             <h2 style="color: #4F46E5;">Notes App Verification</h2>
-//             <p>Your One Time Password (OTP) for verification is:</p>
-//             <h1 style="background: #f4f4f4; padding: 10px; text-align: center; letter-spacing: 5px;">${otp}</h1>
-//             <p>This OTP is valid for 10 minutes. Please do not share it with anyone.</p>
-//             <hr style="border: none; border-top: 1px solid #eee;" />
-//             <p style="color: #888; font-size: 12px;">If you didn't request this, please ignore this email.</p>
-//           </div>
-//         `
-//       };
-
-//       await transporter.sendMail(mailOptions);
-//       console.log('✅ OTP email sent to:', email);
-//     } else {
-//       console.log('ℹ️ Email not configured, OTP only shown in console');
-//     }
-    
-//   } catch (error) {
-//     console.error('Email sending failed, but OTP is:', otp);
-//     console.error('Email error:', error.message);
-//     // Don't throw error - just log it and continue
-//   }
-// };
 // Generate OTP
 const generateOTP = () => {
   return crypto.randomInt(100000, 999999).toString();
@@ -312,9 +266,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// @desc    Google authentication
 // @route   POST /api/auth/google
-// @access  Public
 router.post('/google', async (req, res) => {
   try {
     const { accessToken } = req.body; // Changed from tokenId to accessToken
@@ -334,7 +286,10 @@ router.post('/google', async (req, res) => {
     });
 
     if (!response.ok) {
-      throw new Error('Failed to fetch user info from Google');
+      return res.status(401).json({
+        success: false,
+        message: 'Invalid Google access token'
+      });
     }
 
     const payload = await response.json();
@@ -404,5 +359,6 @@ router.get('/me', protect, async (req, res) => {
     });
   }
 });
+
 
 module.exports = router;
