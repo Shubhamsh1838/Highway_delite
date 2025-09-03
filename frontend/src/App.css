@@ -70,7 +70,7 @@ body {
 }
 
 .image{
-  width: 450px;
+  width: 90%;
   height: 620px;
   display: flex;
   flex-direction: row;
@@ -182,3 +182,89 @@ body {
   font-size: 16px;
 }
 
+/* Responsive styles for tablets and mobile devices */
+@media (max-width: 992px) {
+  .image {
+    width: 450px;
+    height: 620px;
+    padding: 20px 20px 20px 0;
+    border-radius: 5px;
+  }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+  
+  .auth-main {
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  .auth-form {
+    width: 100%;
+    height: auto;
+    padding: 3rem;
+    box-shadow: none;
+  }
+  
+  .image {
+    display: none; /* Hide the image on mobile */
+  }
+  
+  .topLogo {
+    width: 5rem;
+    height: auto;
+    justify-content: center;
+    margin-left: 45%;
+  }
+  
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .form-group input {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small devices (phones, 380px and down) */
+@media (max-width: 380px) {
+  .auth-form {
+    padding: 1rem;
+  }
+  
+  .auth-form h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .form-group {
+    margin-bottom: 0.6rem;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+  }
+  .topLogo {
+    max-width: 60%;
+    height: auto;
+  }
+  
+  .btn {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .text-sm {
+    font-size: 0.8rem;
+  }
+}
