@@ -210,7 +210,7 @@ body {
   .auth-form {
     width: 100%;
     height: auto;
-    padding: 3rem;
+    padding: 2rem;
     box-shadow: none;
   }
   
@@ -219,10 +219,10 @@ body {
   }
   
   .topLogo {
-    width: 4.8rem;
+    width: 5rem;
     height: auto;
     justify-content: center;
-    margin-left: 45%;
+    margin-left: 40%;
   }
   
   .btn {
@@ -255,7 +255,7 @@ body {
     font-size: 0.9rem;
   }
   .topLogo {
-    max-width: 60%;
+    max-width: 55%;
     height: auto;
   }
   
