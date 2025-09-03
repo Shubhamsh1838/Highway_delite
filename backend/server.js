@@ -27,7 +27,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: [
+    process.env.CLIENT_URL || 'https://highway-delite-x92z.onrender.com' 
+  ],
   credentials: true
 }));
 
@@ -45,7 +47,6 @@ const connectDB = async () => {
   } catch (error) {
     console.error('MongoDB Atlas connection failed:', error.message);
     console.log('Please check your connection string format in .env file');
-    console.log('Example: mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/dbname');
     process.exit(1);
   }
 };
@@ -67,7 +68,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ 
     success: false, 
     message: 'Something went wrong!',
-    error: process.env.NODE_ENV === 'development' ? err.message : undefined
+    error: process.env.NODE_ENV === 'production' ? err.message : undefined
   });
 });
 
