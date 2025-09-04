@@ -39,7 +39,7 @@ const CreateNote = () => {
       {/* Header */}
       <header className="dashboard-header">
         <div className="header-left">
-          <img src='top.png' alt="Logo" className="header-logo" />
+          <img src='logo.png' alt="Logo" className="header-logo" />
           <h2 className='create-header'>Create Note</h2>
         </div>
         <div className="header-right">
