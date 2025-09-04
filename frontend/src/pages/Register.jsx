@@ -138,7 +138,7 @@ const Register = () => {
               <input type="password" id="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
             </div>
             
-            <button type="submit" className="btn" disabled={loading}>{loading ? 'Creating Account...' : 'SignUp'}</button>
+            <button type="submit" className="btn" disabled={loading}>{loading ? 'Creating Account...' : 'Sign up'}</button>
             {/* Google Sign Up Button */}
                 <div className="text-center mt-2">
                   <button type="button" onClick={handleGoogleSignUp} className="btn btn-google" disabled={loading}>
@@ -180,5 +180,6 @@ const Register = () => {
     </div>
   );
 };
+
 
 export default Register;
