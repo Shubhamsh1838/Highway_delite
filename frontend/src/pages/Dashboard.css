@@ -27,10 +27,10 @@
 .header-logo {
   color: white;
   background-color: white;
-  height: 40px;
-  border-radius: 10px;
+  height: 50px;
   object-fit: cover;
-  margin-left: 10px;
+  margin-left: 5px;
+  padding: 3px;
 }
 
 .dashboard-header h2 {
@@ -487,7 +487,7 @@
     font-size: 0.95rem;
   }
  .dashboard-header h2 {
-  margin-left: 65px;
+  margin-left: 60px;
   display: flex;
   font-size: 1rem;
   font-weight: 500;
@@ -503,7 +503,8 @@
   }
   .header-logo{
     margin: 0 auto;
-   height: 20px;
+    border-radius: 5px;
+   height: 25px;
   }
   .header-left {
     flex-direction: row;
