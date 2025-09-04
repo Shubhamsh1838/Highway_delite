@@ -77,12 +77,9 @@ const Login = () => {
                     <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                   </div>
                   
-                  <button type="submit" className="btn" disabled={loading}>{loading ? 'Signing in...' : 'SignIn'}</button>
+                  <button type="submit" className="btn" disabled={loading}>{loading ? 'Signing in...' : 'Sign in'}</button>
                   {/* Google Login Button */}
                   <div className="text-center mt-3">
-                    {/* <div className="or-divider">
-                      <span>OR</span>
-                    </div> */}
                     <button type="button" onClick={handleGoogleLogin} className="btn btn-google" disabled={loading}>
                       <span className="google-icon">G</span>
                       Sign in with Google
@@ -102,5 +99,6 @@ const Login = () => {
         </div>
   );
 };
+
 
 export default Login;
