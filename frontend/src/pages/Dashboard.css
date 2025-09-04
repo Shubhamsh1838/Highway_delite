@@ -491,19 +491,19 @@
     font-size: 0.95rem;
   }
  .dashboard-header h2 {
-  margin-left: 60px;
+  margin-left: 65px;
   display: flex;
   font-size: 1rem;
   font-weight: 500;
   gap: 0.8rem;
 }
 .logout-btn {
-    width: 60px;
+    width: 80px;
     font-size: 0.7rem;
     text-align: center;
     align-items: center;
     margin-left: 0.1rem;
-    padding: 2px !important;
+    padding: 4px !important;
   }
   .header-logo{
     margin: 0 auto;
@@ -520,11 +520,12 @@
   .header-right {
     flex-direction: row;
     justify-content: space-between;
+    white-space: nowrap;
     text-align: center;
     align-items: center;
     width: 100%;
     margin-right: 10%;
-    margin-left: 45px;
+    margin-left: 60px;
     padding: 0.5rem;
   }
 }
