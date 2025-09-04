@@ -69,11 +69,10 @@ const Dashboard = () => {
       {/* Header */}
       <header className="dashboard-header">
         <div className="header-left">
-          <img src='top.png' alt="Logo" className="header-logo" />
+          <img src='logo.png' alt="Logo" className="header-logo" />
           <h2>Dashboard</h2>
         </div>
         <div className="header-right">
-          {/* <span className="welcome-text">Welcome, {user?.name}</span> */}
           <button onClick={logout} className="logout-btn">
             Sign Out
           </button>
@@ -130,7 +129,7 @@ const Dashboard = () => {
                       className="btn-delete-trash" 
                       disabled={deleteLoading === note._id}
                     >
-                      <i class="fa-solid fa-trash"></i>{deleteLoading === note._id ? 'Deleting...' : ''}
+                      <i className="fa-solid fa-trash"></i>{deleteLoading === note._id ? 'Deleting...' : ''}
                     </button>
                   </div>
                 </div>
