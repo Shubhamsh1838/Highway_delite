@@ -45,7 +45,7 @@ const CreateNote = () => {
         <div className="header-right">
           {/* <span className="welcome-text">Welcome, {user?.name}</span> */}
           <button onClick={() => navigate('/')} className="logout-btn">
-            Back to Dashboard
+            <i className="fa-solid fa-backward"></i> Dashboard
           </button>
         </div>
       </header>
