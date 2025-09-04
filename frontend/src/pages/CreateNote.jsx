@@ -43,7 +43,6 @@ const CreateNote = () => {
           <h2 className='create-header'>Create Note</h2>
         </div>
         <div className="header-right">
-          {/* <span className="welcome-text">Welcome, {user?.name}</span> */}
           <button onClick={() => navigate('/')} className="dashboard-btn">
             <i className="fa-solid fa-backward"></i> Dashboard
           </button>
