@@ -471,7 +471,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 450px) {
   .create-note-section {
     padding: 1rem;
   }
@@ -491,18 +491,40 @@
     font-size: 0.95rem;
   }
  .dashboard-header h2 {
-  margin-left: 80px;
+  margin-left: 60px;
   display: flex;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
+  gap: 0.8rem;
 }
 .logout-btn {
-    width: 90px;
+    width: 60px;
     font-size: 0.7rem;
+    text-align: center;
+    align-items: center;
     margin-left: 0.1rem;
+    padding: 2px !important;
   }
   .header-logo{
-    margin: 0;
-   height: 25px;
+    margin: 0 auto;
+   height: 20px;
+  }
+  .header-left {
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+  
+  .header-right {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    margin-right: 10%;
+    margin-left: 45px;
+    padding: 0.5rem;
   }
 }
