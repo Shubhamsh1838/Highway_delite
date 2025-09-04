@@ -118,12 +118,13 @@ const Dashboard = () => {
                 <div key={note._id} className="note-card">
                   <div className="note-header">
                     <h3>{note.title}</h3>
-                    <span className="note-date">{formatDate(note.createdAt)}</span>
+                    
                   </div>
                   <div className="note-content">
                     <p>{note.content}</p>
                   </div>
                   <div className="note-actions">
+                    <span className="note-date">{formatDate(note.createdAt)}</span>
                     <button 
                       onClick={() => handleDelete(note._id)} 
                       className="btn-delete-trash" 
