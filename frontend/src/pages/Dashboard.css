@@ -12,8 +12,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: whitesmoke;
+  color: #232323;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -25,12 +25,9 @@
 }
 
 .header-logo {
-  color: white;
-  background-color: white;
   height: 50px;
   object-fit: cover;
   margin-left: 5px;
-  padding: 3px;
 }
 
 .dashboard-header h2 {
@@ -55,7 +52,7 @@
 
 .logout-btn {
   background: none;
-  color: white;
+  color: #4169E1;
   border: none;
   text-decoration: underline;
   padding: 0.5rem 1rem;
@@ -502,7 +499,7 @@
     padding: 4px !important;
   }
   .header-logo{
-    margin: 0 auto;
+    margin: 0 ;
     border-radius: 5px;
    height: 25px;
   }
@@ -511,7 +508,7 @@
     text-align: center;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem;
+    padding: 0.1rem;
   }
   
   .header-right {
@@ -522,7 +519,7 @@
     align-items: center;
     width: 100%;
     margin-right: 10%;
-    margin-left: 57px;
+    margin-left: 63px;
     padding: 0.5rem;
   }
 }
