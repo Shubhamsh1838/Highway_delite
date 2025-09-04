@@ -512,7 +512,7 @@
     font-size: 0.7rem;
     text-align: center;
     align-items: center;
-    margin-left: 1.4rem;
+    margin-left: 0.9rem;
     padding: 4px !important;
   }
   .dashboard-btn {
@@ -544,7 +544,7 @@
     align-items: center;
     width: 100%;
     margin-right: 10%;
-    margin-left: 118px;
+    margin-left: 115px;
     padding: 0.5rem;
   }
 }
