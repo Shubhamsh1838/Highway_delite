@@ -63,6 +63,19 @@
   transition: all 0.2s;
   backdrop-filter: blur(10px);
 }
+.dashboard-btn {
+  background: none;
+  color: #4169E1;
+  border: none;
+  text-decoration: underline;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 500;
+  transition: all 0.2s;
+  backdrop-filter: blur(10px);
+}
 
 .logout-btn:hover {
   background: rgba(255, 255, 255, 0.3);
@@ -414,6 +427,10 @@
   
   .logout-btn {
     width: 90px;
+    margin-left: 13rem;
+  }
+  .dashboard-btn {
+    width: 90px;
     margin-left: 11.5rem;
   }
   .image {
@@ -484,13 +501,21 @@
     font-size: 0.95rem;
   }
  .dashboard-header h2 {
-  margin-left: 60px;
+  margin-left: 30px;
   display: flex;
   font-size: 1rem;
   font-weight: 500;
   gap: 0.8rem;
 }
 .logout-btn {
+    width: 80px;
+    font-size: 0.7rem;
+    text-align: center;
+    align-items: center;
+    margin-left: 1.4rem;
+    padding: 4px !important;
+  }
+  .dashboard-btn {
     width: 80px;
     font-size: 0.7rem;
     text-align: center;
@@ -519,7 +544,7 @@
     align-items: center;
     width: 100%;
     margin-right: 10%;
-    margin-left: 63px;
+    margin-left: 118px;
     padding: 0.5rem;
   }
 }
