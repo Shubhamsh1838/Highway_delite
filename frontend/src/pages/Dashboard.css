@@ -31,17 +31,17 @@
 }
 
 .dashboard-header h2 {
-  margin-left: 500px;
+  margin-left: 150px;
   font-size: 1.5rem;
   font-weight: 600;
   margin-right: 0;
+  transition: all 0.2s;
 }
 
 .header-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 100px;
   gap: 1.5rem;
 }
 
@@ -78,7 +78,10 @@
 }
 
 .logout-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.4);
+}
+.dashboard-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
 }
 
 /* Dashboard Content */
@@ -394,6 +397,7 @@
   display: flex;
   font-size: 1.3rem;
   font-weight: 500;
+  transition: all 0.2s ease;
 }
 .create-header {
   margin-left: 190px;
@@ -426,12 +430,16 @@
   }
   
   .logout-btn {
-    width: 90px;
-    margin-left: 13rem;
+    width: 80px;
+    white-space: nowrap;
+    margin-left: 24rem;
+    transition: all 0.2s;
   }
   .dashboard-btn {
-    width: 90px;
-    margin-left: 11.5rem;
+    width: 80px;
+    margin-left: 21rem;
+    white-space: nowrap;
+    transition: all 0.2s;
   }
   .image {
     width: 380px;
@@ -514,6 +522,7 @@
     align-items: center;
     margin-left: 1.5rem;
     padding: 4px !important;
+    transition: all 0.2s;
   }
   .dashboard-btn {
     width: 80px;
@@ -522,6 +531,7 @@
     align-items: center;
     margin-left: 0.1rem;
     padding: 4px !important;
+    transition: all 0.2s;
   }
   .header-logo{
     margin: 0 ;
@@ -534,6 +544,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.1rem;
+    transition: all 0.2s;
   }
   
   .header-right {
@@ -546,5 +557,6 @@
     margin-right: 10%;
     margin-left: 116px;
     padding: 0.1rem;
+    transition: all 0.2s;
   }
 }
